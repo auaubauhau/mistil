@@ -2,10 +2,8 @@
   "name": "mistil",
   "version": "0.1.0",
   "description": "Date Library",
-  "main": "index.js",
-  "scripts": {
-
-  },
+  "main": "lib/index.ts",
+  "scripts": {},
   "keywords": [
     "date"
   ],
@@ -19,5 +17,14 @@
     "url": "https://github.com/auaubauhau/mistil",
     "type": "github"
   },
-  "private": true
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@types/core-js": "^2.5.2",
+    "typescript": "^3.7.5",
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "core-js": "^3.6.4"
+  }
 }
