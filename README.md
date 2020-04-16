@@ -1,2 +1,2 @@
-# mistil
+# XNOS
 NodeJS date library
