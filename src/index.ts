@@ -2,10 +2,26 @@
 import * as dateFormat from "dateformat";
 
 export class XNOS {
-    private _v: Date = null;
+    private readonly _v: Date = null;
 
-    constructor() {
-        this._v = new Date();
+    constructor(date?: XNOS | Date | number | string) {
+        if (date === undefined || date === null) {
+            this._v = new Date();
+        } else if (date instanceof XNOS) {
+            this._v = new Date(date.t);
+        } else if (date instanceof Date) {
+            this._v = new Date(date.getTime());
+        } else {
+            this._v = new Date(date);
+        }
+    }
+
+    isSameDate(date: XNOS | Date | number | string): boolean {
+        if (date === undefined || date === null) {
+            return false;
+        }
+        const {y, m, d} = new XNOS(date);
+        return y === this.y && m === this.m && d === this.d;
     }
 
     get y() {
@@ -75,8 +91,4 @@ export class XNOS {
     format(mask: string) {
         return dateFormat(this._v, mask);
     }
-}
-
-export namespace XNOS {
-
 }

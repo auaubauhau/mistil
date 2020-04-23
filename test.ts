@@ -2,7 +2,11 @@
 
 import {XNOS} from "./src";
 
+
+
 const date = new XNOS();
+
+console.log('isSameDate?: ', date.isSameDate(new Date()));
 
 console.log(date.y, date.m, date.d);
 
